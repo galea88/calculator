@@ -22,18 +22,22 @@ const App = () => {
     }else if(expButton && selectCalc.length > 0 && prevExpButton){
       dispatch(updateCalc(e.target.value))  
       return;
+    }else if(lastClick === "="){
+      dispatch(resetCalc()); 
+      dispatch(addCalc(displayTotal))        
     }   
 
     dispatch(addCalc(e.target.value));
 
   }
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     let totalString = selectCalc.join('')
     let total = eval(totalString); 
         total = total.toString().substring(0,10);
    
-    dispatch(calcTotal(total))   
+    dispatch(calcTotal(total))
+    dispatch(addCalc(e.target.value))   
   }
 
   const handleReset = () => {  
@@ -48,9 +52,10 @@ const App = () => {
         <div id="totalLabel">{displayTotal}</div>
       </div>      
       <div id="calcOptions"> 
-        {calculations.map(calc => {
-          return <input key={calc} type="button" className="calcButtons" onClick={handleNumberClick} value={calc} />
-        })}       
+        <button className="calcButtons" onClick={handleNumberClick} value="*">x</button>
+        <button className="calcButtons" onClick={handleNumberClick} value="/">&divide;</button>
+        <button className="calcButtons" onClick={handleNumberClick} value="+">+</button>   
+        <button className="calcButtons" onClick={handleNumberClick} value="-">-</button> 
         <input type="button" className="resetButton" onClick={handleReset} value="C"/>            
       </div>
       <input type="button" className="numberButton" onClick={handleNumberClick} value="7" />
