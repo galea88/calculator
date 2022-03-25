@@ -1,0 +1,68 @@
+%buttons-extension{
+    border-radius: 5px;
+    border: none; 
+    text-align: center; 
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-family: 'Courgette', cursive;
+    width: 400px;   
+    margin: 50px auto;  
+    gap: 5px;
+    padding: 5px;  
+    border-radius: 10px;
+    background-color: $background-color;
+
+    #screenRow{
+        #expression{
+            min-height: 32px;
+            font-size: 20px;   
+            color: $lighter-shade-blue; 
+        }
+        #totalLabel{
+            font-size: 50px;        
+            color: white;
+        }
+        grid-column-start: 1;
+        grid-column-end: 4;
+        padding: 25px 30px; 
+        text-align: right;   
+    }
+
+    #calcOptions{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        gap: 10px;     
+    }   
+
+    .numberButton{   
+        padding: 15px;
+        background-color: $lightest-shade-blue;        
+        font-size: 20px;  
+        @extend %buttons-extension;      
+    }  
+    
+    #equalsButton{
+        background-color: white;
+        @extend %buttons-extension; 
+    }
+    
+    .calcButtons, .resetButton{
+        padding: 10px;        
+        background-color: $darker-shade-blue;                
+        color:white;
+        @extend %buttons-extension;      
+    }
+    
+    .numberButton:hover, .calcButtons:hover, 
+    #equalsButton:hover, .resetButton:hover{
+        cursor:pointer;
+    }
+    
+}

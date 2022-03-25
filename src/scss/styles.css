@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+.container .calcButtons, .container .resetButton, .container #equalsButton, .container .numberButton {
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-family: "Courgette", cursive;
+  width: 400px;
+  margin: 50px auto;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #002e46;
+}
+.container #screenRow {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  padding: 25px 30px;
+  text-align: right;
+}
+.container #screenRow #expression {
+  min-height: 32px;
+  font-size: 20px;
+  color: #006093;
+}
+.container #screenRow #totalLabel {
+  font-size: 50px;
+  color: white;
+}
+.container #calcOptions {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 10px;
+}
+.container .numberButton {
+  padding: 15px;
+  background-color: #23bbed;
+  font-size: 20px;
+}
+.container #equalsButton {
+  background-color: white;
+}
+.container .calcButtons, .container .resetButton {
+  padding: 10px;
+  background-color: #005079;
+  color: white;
+}
+.container .numberButton:hover, .container .calcButtons:hover,
+.container #equalsButton:hover, .container .resetButton:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
